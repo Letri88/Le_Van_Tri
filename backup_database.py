@@ -70,7 +70,7 @@ def backup_database():
         send_email(subject, body_html)
 
 # Lên lịch chạy mỗi ngày lúc 00:00
-schedule.every().day.at("15:28").do(backup_database)
+schedule.every().day.at("00:00").do(backup_database)
 print("🚀 Hệ thống backup đã khởi động, chờ tới 00:00 mỗi ngày...")
 while True:
     schedule.run_pending()
